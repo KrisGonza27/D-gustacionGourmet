@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"  crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Degustacion Gourmet</title>
+</head>
+<body>
+  <header class="header">
+    <div class="contenedor">
+        <div class="barra_princ">
+          <a class="logo" href="index.html">
+            <h1 class="name__logo">D'gustacion Gourmet</h1>
+            <!-- <img src="img/Logo degustacion.jpg" alt="logo_princ">   -->
+             
+            <nav class="navegacion">
+              <a href="contactame.html" class="navegacion__enlace">Contactame</a>
+              <a href="catalogo.html" class="navegacion__enlace">Catalogo</a>
+              <a href="pedidos.html" class="navegacion__enlace">Pedidos</a>             
+            </nav> 
+              <div class="texto_header">
+                <h2 class="no-margin">D'gustacion Gourmet</h2>
+                <p class="no--margin"> Un manjar para tu paladar</p>
+              </div>
+          </a>
+        </div>    
+      </div>            
+    </div>
+  </header> 
+  
+  <main>
+    <div id="catalog-menu">
+      <h2 class="prom__name">Promociones</h2>
+      <ul id="promotion-list">
+        <!-- Aquí se añadirán dinámicamente las promociones -->
+      </ul>
+    </div>
+    
+    <script>
+      // Define las promociones como un array de objetos
+      var promotions = [
+        {
+          name: "Promoción 1",
+          description: "Descripción de la promoción 1",
+          endDate: "2023-06-30"
+        },
+        {
+          name: "Promoción 2",
+          description: "Descripción de la promoción 2",
+          endDate: "2023-07-15"
+        }
+      ];
+    
+      // Obtén la referencia al elemento <ul> que contendrá las promociones
+      var promotionList = document.getElementById("promotion-list");
+    
+      // Función para agregar una promoción al menú
+      function addPromotion(name, description) {
+        // Crea un nuevo elemento de lista para la promoción
+        var promotionItem = document.createElement("li");
+        promotionItem.className = "promotion-item";
+    
+        // Crea el botón de la promoción
+        var buttonElement = document.createElement("button");
+        buttonElement.innerText = name;
+    
+        // Agrega la función de clic al botón (opcional)
+        buttonElement.addEventListener("click", function() {
+          alert("¡Has hecho clic en la promoción: " + name + "!");
+        });
+    
+        // Crea el elemento de descripción para la promoción (opcional)
+        var descriptionElement = document.createElement("p");
+        descriptionElement.innerText = description;
+    
+        // Agrega el botón y la descripción a la promoción
+        promotionItem.appendChild(buttonElement);
+        promotionItem.appendChild(descriptionElement);
+    
+        // Agrega la promoción al menú
+        promotionList.appendChild(promotionItem);
+      }
+    
+      // Recorre el array de promociones y agrega cada una al menú
+      promotions.forEach(function(promotion) {
+        addPromotion(promotion.name, promotion.description);
+      });
+    </script>
+<!-- Code injected by live-server -->
+<script>
+// <![CDATA[  <-- For SVG support
+if ('WebSocket' in window) {
+  (function () {
+    function refreshCSS() {
+      var sheets = [].slice.call(document.getElementsByTagName("link"));
+      var head = document.getElementsByTagName("head")[0];
+      for (var i = 0; i < sheets.length; ++i) {
+        var elem = sheets[i];
+        var parent = elem.parentElement || head;
+        parent.removeChild(elem);
+        var rel = elem.rel;
+        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+          elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+        }
+        parent.appendChild(elem);
+      }
+    }
+    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+    var address = protocol + window.location.host + window.location.pathname + '/ws';
+    var socket = new WebSocket(address);
+    socket.onmessage = function (msg) {
+      if (msg.data == 'reload') window.location.reload();
+      else if (msg.data == 'refreshcss') refreshCSS();
+    };
+    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+      console.log('Live reload enabled.');
+      sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+    }
+  })();
+}
+else {
+  console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+}
+// ]]>
+</script>
+
+    </div>
+    <div class="contenido_princ">
+      <h3>Sobre nosotros</h3>
+      <p>En D'gustacion Gourmet, somos apasionados de crear productos deliciosos y exquisitos. Nos especializamos en tortas, postres, pasapalos y platos gourmet elaborados con ingredientes de alta calidad. Nuestra misión es brindarte una experiencia gastronómica única y memorable, ofreciéndote una amplia variedad de opciones y un servicio excepcional. Nuestro empresa se inspira en la tradición y la innovación, creando combinaciones de sabores sorprendentes y presentaciones impresionantes. Valoramos la calidad y la frescura de nuestros ingredientes, nos esforzamos por ofrecerte un servicio personalizado y amigable. Explora nuestro catálogo de productos y déjanos ser tu destino favorito. ¡Disfruta de cada dulce momento con nosotros!</p>
+
+      <h3>Descubre nuestras especialidades</h3>
+      <p>Nuestras especialidades son:</p>
+      <ul>
+        <li>Torta de chocolate</li>
+        <li>Torta de piña</li>
+        <li>Pizza</li>
+        <li>Pan de queso</li>
+        <li>Torta tres leches</li>
+      </ul>
+      <a class="saber_mas" href="saber_mas.html">Saber mas</a>
+      
+      <h3>Nuestros servicios</h3>
+      <p>En D'gustacion Gourmet, te ofrecemos una amplia variedad de servicios para satisfacer tus antojos dulces y salados. Algunos de nuestros servicios incluyen:</p>
+      <ul>
+        <li>Elaboración de tortas personalizadas para ocasiones especiales</li>
+        <li>Cantidades de dulces manjares y aperitivos para eventos</li>
+        <li>Talleres de repostería para aprender nuevas técnicas</li>
+        <li>Delivery de nuestros productos</li>
+      </ul>
+      
+      <h3>¿Alguna consulta?</h3>
+      <p>Nos encontramos en la siguiente dirección:</p>
+      <address>
+        Urb. La Coromoto, Av 43A <br>
+        Casa 164-07, frente al deposito de Cantv<br>
+        Código Postal: 4004
+        <p>Puedes tambien consultarnos tambien en:</p>
+        <li><a href="https://www.instagram.com/degustaciongourmet">Instagram</a></li>
+        <li><a href="yalexsi.lopez@gmail.com">Correo</a></li>
+        <li><a href="https://api.whatsapp.com/send/?phone=584146453906&text&type=phone_number&app_absent=0">Whatsapp</a></li>
+      </address>
+
+    </div>
+  </main>
+  
+  <footer>
+    <h3>Contacto</h3>
+  <ul>
+    <li><a href="https://www.instagram.com/degustaciongourmet">Instagram</a></li>
+    <li><a href=""></a></li>
+  </ul>
+  </footer>
+
+</body>
+</html>
